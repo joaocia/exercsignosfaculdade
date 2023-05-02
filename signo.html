@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id Signos</title>
+    <link rel="stylesheet"href="signo.css">
+
+    </head>
+
+    
+    <script defer>
+        function verificar() {
+            const signo = document.querySelector('div#signo')
+            var data = document.querySelector('input#data').value.split("-")[2]
+            var mes = document.querySelector('input#data').value.split("-")[1]
+            var resultado = ''
+            
+            if (data >= 21 && mes == 1 || data <= 19 && mes <= 2)  {
+                resultado = `<b>Aquário<b>`
+            } else if (data >= 19 && mes == 2 || data <= 20 && mes == 3){
+                resultado = `<b>Peixes<b>`
+            } else if (data >= 21 && mes == 3 || data < 21 && mes == 4) {
+                resultado = `<b>Aries<b>`
+            } else if (data >= 21 && mes == 4 || data <= 20 && mes == 5) {
+                resultado = `<b>Touro<b>`
+            } else if (data >= 21 && mes == 5 || data <= 20 && mes == 6) {
+                resultado = `<b>Gêmeos<b>`
+            } else if (data >= 21 && mes == 6 || data <= 22 && mes == 7) {
+                resultado = `<b>Câncer<b>`
+            } else if (data >= 23 && mes == 7 || data <= 22 && mes == 8) {
+                resultado = `<b>Leão<b>`
+            } else if (data >= 23 && mes == 8 || data <= 22 && mes == 9) {
+                resultado = `<b>Virgem<b>`
+            } else if (data >= 23 && mes == 9 || data <= 22 && mes == 10) {
+                resultado = `<b>Libra<b>`
+            } else if (data >= 23 && mes == 10 || data <= 21 && mes == 11) {
+                resultado = `<b>Escorpião<b>`
+            } else if (data >= 22 && mes == 11 || data <= 21 && mes == 12) {
+                resultado = `<b>Sagitário<b>`
+            } else {
+                if (data && mes != null) {
+                    resultado = `<b>Capricórnio<b>`
+                }
+            }
+            signo.innerHTML = `Seu signo é ${resultado}.`
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="center">
+        
+        <img src="./image/joao-bidu-realiza-previsoes-para-santa-cruz-e-brasil-em-2020-31122019113924.png"> </img>
+        
+    </div class="center">
+    <div class="container">
+        <h1>DESCUBRA SEU SIGNO AQUI</h1>
+        <label for="input:date">Digite a sua data de nascimento:</label>
+        <div>
+            <input type="date" name="data" id="data">
+            <button id="verificar" name="verificar" onclick="verificar()">verificar</button>  
+        </div>
+        <div class="signo" id="signo"></div>
+    </div>
+    
+        
+</body>
+<footer>
+    <p>
+        Desenvolvido por João Cia
+    </p>
+</footer>
+</html>
